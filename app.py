@@ -11,7 +11,7 @@ from resources.store import Store, StoreList
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://test:test@10.253.247.63:3306/test'
-app.secret_key = 'jose'
+app.secret_key = 'change_this'
 api = Api(app)
 
 @app.before_first_request
