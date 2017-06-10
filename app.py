@@ -7,11 +7,12 @@ from security import authenticate, identity
 from resources.user import UserRegister
 from resources.items import Item, Items
 from resources.store import Store, StoreList
+import constants  # passwörter und connect strings
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://test:test@10.253.247.63:3306/test'
-app.secret_key = 'change_this'
+app.config['SQLALCHEMY_DATABASE_URI'] = constants.db_connect_string
+app.secret_key = constants.app_secret
 api = Api(app)
 
 @app.before_first_request
